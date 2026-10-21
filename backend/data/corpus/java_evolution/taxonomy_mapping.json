@@ -1,0 +1,79 @@
+{
+  "corpus_title": "Java API Evolution to REST/OpenAPI Breaking Change Taxonomy Mapping",
+  "provenance": "Adapted from Java API Evolution Data Corpus (251 benchmark cases - LaBRI / Kiv)",
+  "total_mappings": 8,
+  "mappings": [
+    {
+      "java_pattern": "METHOD_REMOVED",
+      "java_example": "Removal of com.google.common.collect.Maps#uniqueIndex(Iterable, Function)",
+      "openapi_rest_counterpart": "ENDPOINT_OR_OPERATION_REMOVAL",
+      "openapi_example": "DELETE /v1/users/{id} removed from path items",
+      "engine_component": "Student 1 Structural Diff Engine",
+      "breaking_classification": "STRUCTURAL_BREAKING",
+      "severity": "CRITICAL"
+    },
+    {
+      "java_pattern": "PARAMETER_NOW_REQUIRED (Overload removal / non-null annotation)",
+      "java_example": "Removal of parameterless constructor requiring mandatory configuration object",
+      "openapi_rest_counterpart": "OPTIONAL_TO_REQUIRED_PARAMETER",
+      "openapi_example": "Parameter 'warehouse_id' changed required: false -> required: true",
+      "engine_component": "Student 1 Structural Diff + Student 3 Behavioral Engine",
+      "breaking_classification": "STRUCTURAL_BREAKING",
+      "severity": "HIGH"
+    },
+    {
+      "java_pattern": "PRECONDITION_TIGHTENED (IllegalArgumentException added)",
+      "java_example": "Method checks Preconditions.checkArgument(points > 0) in v2 where previously 0 was accepted",
+      "openapi_rest_counterpart": "BEHAVIORAL_PRECONDITION_STRENGTHENING",
+      "openapi_example": "Documentation: 'Account balance must be greater than zero before submitting withdrawal'",
+      "engine_component": "Student 3 spaCy Deontic Extractor",
+      "breaking_classification": "BEHAVIORAL_BREAKING",
+      "severity": "HIGH"
+    },
+    {
+      "java_pattern": "RETURN_TYPE_NARROWED_OR_INCOMPATIBLE",
+      "java_example": "Return type shifted from java.util.List<T> to java.util.Optional<T>",
+      "openapi_rest_counterpart": "RESPONSE_SCHEMA_TYPE_MUTATION",
+      "openapi_example": "Response body field 'items' type changed from array to object",
+      "engine_component": "Student 1 Structural Diff Engine",
+      "breaking_classification": "STRUCTURAL_BREAKING",
+      "severity": "HIGH"
+    },
+    {
+      "java_pattern": "THROWS_CHECKED_EXCEPTION_ADDED",
+      "java_example": "Method adds throws RateLimitExceededException to signature",
+      "openapi_rest_counterpart": "HTTP_429_RATE_LIMIT_DEONTIC_PROHIBITION",
+      "openapi_example": "Clients must not exceed 10 outbound dispatches per second (HTTP 429)",
+      "engine_component": "Student 3 Behavioral Analyzer",
+      "breaking_classification": "BEHAVIORAL_BREAKING",
+      "severity": "HIGH"
+    },
+    {
+      "java_pattern": "EXECUTION_SEMANTICS_CHANGED (Sync to Async Future)",
+      "java_example": "Method return type changed from Result to CompletableFuture<Result>",
+      "openapi_rest_counterpart": "EXECUTION_MODEL_SHIFT (Sync 200 -> Async 202 Polling)",
+      "openapi_example": "Synchronous charge execution -> Enqueue into async worker queue with HTTP 202",
+      "engine_component": "Student 2 Semantic Bi-Encoder + Student 3 Behavioral Analyzer",
+      "breaking_classification": "DUAL_BREAKING",
+      "severity": "CRITICAL"
+    },
+    {
+      "java_pattern": "DEFAULT_VALUE_MUTATION",
+      "java_example": "Default cache timeout property reduced from 60s to 10s",
+      "openapi_rest_counterpart": "DEFAULT_VALUE_CONSTRAINT_ALTERATION",
+      "openapi_example": "Query parameter 'per_page' default value modified from 100 to 30",
+      "engine_component": "Student 1 Structural Diff + Student 2 Semantic Drift",
+      "breaking_classification": "STRUCTURAL_BREAKING",
+      "severity": "MEDIUM"
+    },
+    {
+      "java_pattern": "METHOD_DEPRECATION_WARNING",
+      "java_example": "@Deprecated annotation added with replacement pointer",
+      "openapi_rest_counterpart": "ENDPOINT_DEPRECATION_FLAG_ADDED",
+      "openapi_example": "deprecated: true added to GET /v1/feed with sunset headers",
+      "engine_component": "Student 1 Structural Diff Engine",
+      "breaking_classification": "NON_BREAKING_WARNING",
+      "severity": "LOW"
+    }
+  ]
+}

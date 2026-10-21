@@ -1,0 +1,167 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Inventory & Product Catalog API",
+    "version": "2.0.0",
+    "description": "Production service for managing warehouse stock, product catalog items, and supplier orders."
+  },
+  "paths": {
+    "/products": {
+      "get": {
+        "summary": "List all products",
+        "description": "Returns available products only. Inactive and discontinued items are excluded.",
+        "parameters": [
+          {
+            "name": "warehouse_id",
+            "in": "query",
+            "required": true,
+            "description": "Mandatory warehouse identifier. Callers must provide a valid warehouse ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of items returned per page.",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of catalog products",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create new product item",
+        "description": "Adds a new product to inventory. Mandatory: caller must provide safety_stock level.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "quantity": {
+                    "type": "integer",
+                    "minimum": 5
+                  },
+                  "safety_stock": { "type": "integer" }
+                },
+                "required": ["name", "quantity", "safety_stock"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "Get product by ID",
+        "description": "Retrieves comprehensive product details.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      }
+    },
+    "/products/{id}/restock": {
+      "post": {
+        "summary": "Restock product inventory",
+        "description": "Adds incoming inventory units to the specified product balance. Strictly rate limited to 60 requests per minute.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "units_added": { "type": "integer", "minimum": 1 }
+                },
+                "required": ["units_added"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Inventory restocked successfully"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "price": { "type": "number" },
+          "status": { "type": "string" }
+        },
+        "required": ["id", "name", "price"]
+      }
+    }
+  }
+}

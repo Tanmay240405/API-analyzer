@@ -1,0 +1,23 @@
+{
+  "dataset_name": "APIstic: Large-Scale OpenAPI Evolution Dataset",
+  "zenodo_record": "https://zenodo.org/records/20525072",
+  "doi": "10.5281/zenodo.20525072",
+  "research_paper": "APIstic: A Large-Scale Dataset of OpenAPI Specifications and Their Evolution",
+  "conference": "ACM International Conference on Mining Software Repositories (MSR 2024)",
+  "paper_doi": "10.1145/3643991.3644932",
+  "exploration_dashboard": "http://openapi.inf.usi.ch/",
+  "publisher": "Software Institute, Università della Svizzera italiana (USI), Switzerland",
+  "total_specifications_in_published_corpus": 1200000,
+  "sources": ["GitHub", "SwaggerHub", "BigQuery", "APIs.guru"],
+  "used_for": [
+    "Student 1: Structural schema AST mutations mined from GitHub commit histories",
+    "Student 2: Semantic documentation drift & similarity pairs across OpenAPI commit diffs",
+    "Student 3: Behavioral contract deontic obligations and breaking change impact classification"
+  ],
+  "secondary_cross_validation_corpus": {
+    "name": "Java API Evolution Data Corpus (LaBRI / University of Bordeaux)",
+    "url": "https://github.com/labri-progress/api-evolution-data-corpus-improved",
+    "benchmark_cases": 251,
+    "role": "Cross-validation of breaking change taxonomy and binary vs behavioral breakage"
+  }
+}

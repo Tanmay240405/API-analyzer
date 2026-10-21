@@ -1,0 +1,29 @@
+{
+  "student": "Student 3",
+  "task_name": "API Behavioral Deontic & Consumer Breakage Risk Classifier",
+  "model_architecture": "Dual-Head (MLPClassifier + GradientBoostingClassifier)",
+  "dataset_name": "API Behavioral Contracts & Deontic Modalities Corpus (APIstic Mined)",
+  "train_samples": 90,
+  "test_samples": 36,
+  "modality_classes": [
+    "OBLIGATION",
+    "PERMISSION",
+    "POSTCONDITION",
+    "PRECONDITION",
+    "PROHIBITION",
+    "RATE_LIMIT"
+  ],
+  "severity_classes": [
+    "CRITICAL",
+    "HIGH",
+    "LOW",
+    "MEDIUM",
+    "NON_BREAKING"
+  ],
+  "modality_accuracy": 0.9444444444444444,
+  "modality_f1": 0.941025641025641,
+  "severity_accuracy": 0.5555555555555556,
+  "severity_f1": 0.48619528619528624,
+  "training_duration_seconds": 0.32,
+  "saved_model_path": "C:\\Users\\Tanmay\\Desktop\\collegeProject\\NLP\\backend\\training\\..\\models\\student3_behavioral\\model.joblib"
+}

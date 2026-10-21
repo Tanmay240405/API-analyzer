@@ -1,0 +1,17 @@
+{
+  "dataset_name": "Java API Evolution Data Corpus",
+  "institutions": [
+    "University of West Bohemia (Kiv, Department of Computer Science and Engineering)",
+    "University of Bordeaux (LaBRI CNRS UMR 5800, France)"
+  ],
+  "original_url": "https://www.kiv.zcu.cz/en/research/downloads/product-detail-en.html?produkt_id=136",
+  "github_repository": "https://github.com/labri-progress/api-evolution-data-corpus-improved",
+  "total_benchmark_cases": 251,
+  "role_in_project": "Secondary Cross-Validation Benchmark for Breaking Change Taxonomy",
+  "selection_rationale": "Selected as Dataset #2 to cross-validate our breaking change taxonomy. While Java library changes operate on bytecode and signatures, their underlying mutation semantics (parameter requirement tightening, return type shifts, method deletion, precondition assertion) directly mirror OpenAPI structural and behavioral breaking changes. This demonstrates our NLP engine's classification aligns with established empirical software engineering literature.",
+  "dataset_statistics": {
+    "breaking_changes": 174,
+    "non_breaking_changes": 77,
+    "source_libraries": ["Google Guava", "Apache Commons IO", "Spring Framework", "Joda-Time", "Jackson Databind"]
+  }
+}

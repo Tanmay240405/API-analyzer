@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: GlobalPay Transaction API
+  version: 1.4.0
+  description: High-throughput payment processing engine for multi-currency transactions.
+paths:
+  /api/v1/payments/charge:
+    post:
+      summary: Process Card Payment
+      description: Processes credit and debit card payments synchronously. Returns the final settlement receipt immediately upon bank confirmation. Caller may optionally provide idempotency_key in headers to avoid duplicate charges.
+      parameters:
+        - name: idempotency_key
+          in: header
+          required: false
+          schema:
+            type: string
+          description: Optional UUID token to prevent duplicate charges.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amount
+                - currency
+                - source_token
+              properties:
+                amount:
+                  type: integer
+                  description: Charge amount in minor currency units (cents).
+                currency:
+                  type: string
+                  description: 3-letter ISO currency code.
+                source_token:
+                  type: string
+                  description: Payment method card token.
+                description:
+                  type: string
+                  description: Optional transaction note.
+      responses:
+        '200':
+          description: Payment succeeded immediately.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  status:
+                    type: string
+                  amount:
+                    type: integer
+                  receipt_url:
+                    type: string
+        '400':
+          description: Invalid card details.
+
+  /api/v1/refunds:
+    post:
+      summary: Issue Refund
+      description: Issues a refund for a previously settled payment.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - payment_id
+              properties:
+                payment_id:
+                  type: string
+                amount:
+                  type: integer
+      responses:
+        '200':
+          description: Refund completed.
+
+  /api/v1/customers/{id}:
+    get:
+      summary: Retrieve Customer Profile
+      description: Fetches registered customer account details and stored payment methods.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Customer record found.

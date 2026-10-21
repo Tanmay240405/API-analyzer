@@ -1,0 +1,642 @@
+{
+  "dataset_name": "API Structural AST & Schema Mutation Corpus (APIstic Mined)",
+  "dataset_source": "APIstic: Large-Scale OpenAPI Evolution Dataset (ACM MSR 2024 / Zenodo 20525072)",
+  "dataset_doi": "10.5281/zenodo.20525072",
+  "description": "Comprehensive corpus of API structural mutations and schema transitions mined from real-world OpenAPI commits for training Student 1's Structural Change Classifier.",
+  "version": "2.0.0",
+  "total_samples": 126,
+  "train_samples": [
+    {
+      "text": "parameter 'limit' default value changed from '50' to '20'",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "query parameter 'page_size' default value modified from '100' to '25'",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'offset' default changed from '0' to '10'",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "header parameter 'max_results' default decreased from 500 to 100",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "query parameter 'timeout_sec' default value increased from 30 to 60",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "parameter 'cache_ttl' default extended from 300 to 600 seconds",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "query parameter 'sort_order' default changed from 'asc' to 'desc'",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'format' default value changed from 'json' to 'csv'",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "pagination default 'per_page' reduced from 50 to 10 records",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "query param 'depth' default recursion level reduced from 3 to 1",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'retry_count' default incremented from 3 to 5",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "parameter 'include_details' default set to false instead of true",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'sync_timeout' default dropped from 120s to 30s",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'apiVersion' default updated from '2023-01-01' to '2024-06-01'",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'buffer_size' default increased from 1024 to 4096",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "parameter 'warehouse_id' (query) changed from optional to REQUIRED",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "query parameter 'tenant_id' changed from optional to required",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "header 'X-Org-ID' marked as mandatory required parameter",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "request body field 'safety_stock' changed from optional to required",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'currency' changed from required to optional",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "field 'discount_code' requirement removed; now optional",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "header parameter 'Idempotency-Key' now strictly required on POST operations",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "query param 'account_number' requirement relaxed to optional",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "request parameter 'billing_address_id' is now required for credit card processing",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "path parameter 'version' marked mandatory across all resource endpoints",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "field 'notes' in customer payload changed from required to optional",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "header 'Authorization' token requirement made mandatory for read operations",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "query parameter 'filter_status' requirement dropped",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "form parameter 'captcha_token' newly required for registration endpoint",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter 'callback_url' is now mandatory on asynchronous webhook creation",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "new endpoint operation 'POST /products/{id}/restock' was added to specification",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "added new endpoint 'GET /v2/inventory/analytics' with response schema",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "new route 'POST /orders/bulk' introduced for batch processing",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "endpoint 'DELETE /v1/legacy/cache' was removed from specification",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "removed deprecated operation 'GET /products/export_csv'",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "endpoint operation 'PUT /users/{id}/password' completely removed",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "endpoint 'DELETE /v1/sessions/all' decommissioned and removed",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "introduced route 'GET /v3/subscriptions/{id}/usage' to fetch telemetry",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "removed obsolete endpoint 'POST /auth/legacy_login' in favor of OAuth2",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "added endpoint 'PATCH /v1/customers/{id}/preferences'",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "operation 'GET /v1/reports/pdf' was deleted from API schema",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "new webhook listener endpoint 'POST /webhooks/incoming' added",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "deprecated endpoint 'GET /v1/geo/ip' removed after sunset period",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "added new sub-resource endpoint 'GET /v1/teams/{id}/audit_logs'",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "endpoint 'POST /v1/tokens/revoke' purged from OpenAPI paths",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "schema field 'price' type changed from integer to number",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": false
+    },
+    {
+      "text": "property 'user_id' type changed from string to integer (incompatible type)",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "field 'tags' type changed from array of strings to comma-separated string",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "response body property 'created_at' type mutated from unix timestamp integer to ISO8601 string",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "property 'balance' type narrowed from float to non-negative integer",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "field 'is_active' changed from boolean to integer flag (0 or 1)",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "enum 'status' value 'ARCHIVED' removed from allowed string literals",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "response schema 'items' changed from array of objects to paginated wrapper object",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "property 'tax_rate' widened from integer to floating point number",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": false
+    },
+    {
+      "text": "field 'metadata' schema changed from key-value map to structured nested object",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "property 'uuid' schema format changed from generic string to strict UUIDv4 regex",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "field 'postal_code' type altered from integer to alphanumeric string",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": false
+    },
+    {
+      "text": "schema enum 'payment_method' deleted option 'BITCOIN'",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "property 'duration_ms' changed to 'duration_seconds' float",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "response field 'coordinates' converted from latitude/longitude floats to GeoJSON point",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "response status code 400 Bad Request added with ValidationError schema",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "response status 422 Unprocessable Entity added for strict payload validation",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "successful response code 200 OK replaced with 202 Accepted",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "response status code 204 No Content removed and replaced by 200 with body",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "added response status 429 Too Many Requests with RateLimit error schema",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "response code 201 Created replaced with 200 OK with resource representation",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "response status 301 Moved Permanently replaced with 308 Permanent Redirect",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "added response status 503 Service Unavailable with Retry-After header",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "primary success response code 200 altered to 204 No Content; response body removed",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "status code 401 Unauthorized split into 401 and 403 Forbidden schemas",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "removed response status code 200; endpoint now exclusively returns 202 Accepted",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "added response status 409 Conflict when unique email already registered",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "response code 302 Found changed to 303 See Other",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "response status 200 replaced with 304 Not Modified when ETag matches",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "removed standard 500 error schema and consolidated into RFC 7807 ProblemDetails",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added optional query parameter 'search' string",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "introduced optional filter 'category_id' with default null",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added response header 'X-RateLimit-Remaining'",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added optional property 'metadata' object to response body",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "parameter description updated for clarity without schema alterations",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added optional request header 'X-Client-Trace-Id' for correlation",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added summary annotation to endpoint documentation for OpenAPI UI",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "new optional enum value 'PAYPAL' appended to payment options",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added markdown documentation examples to request body specification",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "introduced optional query param 'fields' for sparse fieldsets",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "response header 'X-Request-Id' added to all 2xx and 4xx responses",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added optional query parameter 'expand' to embed related relations",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "clarified parameter description regarding UTF-8 encoding requirements",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "added deprecation notice warning to operation summary",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "introduced optional query filter 'created_after' ISO date string",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    }
+  ],
+  "test_samples": [
+    {
+      "text": "bump pagination limit fallback to 25 items",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "reduce socket connection timeout from 60s to 15s",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "set query parameter page_size fallback to 10",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "decrease default batch_size from 50 to 10 records",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "switch default sort_direction from asc to desc",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "parameter response_format default modified from json to xml",
+      "label": "PARAMETER_DEFAULT_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "make tenant_id header mandatory for all organization queries",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "enforce mandatory billing_address_id on checkout payload",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "drop optionality: client_token is now compulsory",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "require api-key in request headers for telemetry endpoints",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "header parameter X-Status-Code made mandatory in request",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "relax requirement: phone_number is now optional",
+      "label": "PARAMETER_REQUIRED_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "deprecate and delete route /v1/legacy_auth",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "purge /v1/customers/export_csv operation",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "decommission old user registration path",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "introduce route /v2/analytics/realtime with telemetry schema",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "delete operation /v1/user_status from service",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": true
+    },
+    {
+      "text": "added endpoint POST /api/v2/webhooks",
+      "label": "ENDPOINT_LIFECYCLE",
+      "is_breaking": false
+    },
+    {
+      "text": "convert user_id representation from integer to UUID format",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "response status field in body converted to integer code",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "restrict status enum: delete 'PENDING' state option",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "field tags changed from array of strings to delimited string",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "widen balance property from int32 to float64",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": false
+    },
+    {
+      "text": "change schema type of coordinates to GeoJSON object",
+      "label": "SCHEMA_TYPE_MUTATION",
+      "is_breaking": true
+    },
+    {
+      "text": "replace 200 OK handler with asynchronous 202 task dispatch",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "change response code 204 to 200 with response payload",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "add 429 response schema definition for throttled requests",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "replace status 201 Created with 200 OK across write endpoints",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "response status 200 replaced with 204 removing response body",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": true
+    },
+    {
+      "text": "split 401 Unauthorized into 401 and 403 Forbidden schemas",
+      "label": "RESPONSE_STATUS_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "add markdown docstring examples to query parameters",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "clarify rate limit header semantics in description",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "add optional filter category_slug to search parameters",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "introduce optional correlation header X-Trace-ID",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "updated description text for clarity without modifying contracts",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    },
+    {
+      "text": "support optional sparse fieldsets via fields parameter",
+      "label": "NON_BREAKING_CHANGE",
+      "is_breaking": false
+    }
+  ]
+}

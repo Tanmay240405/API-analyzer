@@ -1,0 +1,22 @@
+{
+  "student": "Student 2",
+  "task_name": "API Documentation Semantic Similarity & Drift Bi-Encoder",
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "loss_function": "CosineSimilarityLoss",
+  "dataset_name": "API Documentation Semantic Textual Similarity (STS) & Drift Corpus",
+  "train_pairs": 26,
+  "test_pairs": 10,
+  "epochs": 4,
+  "baseline_metrics": {
+    "mse_loss": 0.05541701832109809,
+    "pearson_correlation": 0.10475602234348312,
+    "spearman_correlation": 0.24848484848484845
+  },
+  "fine_tuned_metrics": {
+    "mse_loss": 0.03756884769406308,
+    "pearson_correlation": 0.3679199863645182,
+    "spearman_correlation": 0.3696969696969697
+  },
+  "training_duration_seconds": 12.05,
+  "saved_checkpoint_path": "C:\\Users\\Tanmay\\Desktop\\collegeProject\\NLP\\backend\\training\\..\\models\\student2_semantic"
+}

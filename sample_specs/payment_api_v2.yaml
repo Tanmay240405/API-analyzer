@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  title: GlobalPay Transaction API
+  version: 2.0.0
+  description: High-throughput payment processing engine for multi-currency transactions.
+paths:
+  /api/v1/payments/charge:
+    post:
+      summary: Process Payment Asynchronously
+      description: >-
+        Enqueues payment request into asynchronous background worker queue. Returns a pending charge token for webhook reconciliation. Mandatory requirement: caller must provide valid idempotency_key in request headers. Strictly rate limited to 50 requests per minute per merchant account.
+      parameters:
+        - name: idempotency_key
+          in: header
+          required: true
+          schema:
+            type: string
+          description: Mandatory UUID token to prevent duplicate charges.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amount
+                - currency
+                - source_token
+                - merchant_account_id
+              properties:
+                amount:
+                  type: integer
+                  description: Charge amount in minor currency units (cents).
+                currency:
+                  type: string
+                  description: 3-letter ISO currency code.
+                source_token:
+                  type: string
+                  description: Payment method card token.
+                merchant_account_id:
+                  type: string
+                  description: Newly required merchant account identifier.
+                description:
+                  type: string
+                  description: Optional transaction note.
+      responses:
+        '202':
+          description: Charge queued asynchronously.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                  status:
+                    type: string
+        '400':
+          description: Invalid card details or missing idempotency key.
+        '429':
+          description: Rate limit exceeded.
+
+  /api/v1/customers/{id}:
+    get:
+      summary: Retrieve Customer Profile
+      deprecated: true
+      description: >-
+        Fetches registered customer account details. Deprecated: will be sunset in next release. Use /api/v2/identity/customers/{id} instead.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Customer record found.
+
+  /api/v2/disputes:
+    post:
+      summary: Submit Transaction Dispute
+      description: Initiates a formal chargeback dispute review for a questioned transaction.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - charge_id
+                - reason
+              properties:
+                charge_id:
+                  type: string
+                reason:
+                  type: string
+      responses:
+        '201':
+          description: Dispute filed successfully.

@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: CloudAuth Identity Service
+  version: 2.0.0
+  description: Centralized authentication, OAuth2 token issuance, and user lifecycle API.
+paths:
+  /api/v1/auth/token:
+    post:
+      summary: Issue OAuth2 Token
+      description: >-
+        Issues access tokens. Mandatory: client_secret is strictly required. Unauthenticated or public requests are forbidden. Tightly throttled to 100 requests per minute per IP.
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: client_secret
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Token issued successfully.
+        '401':
+          description: Invalid client credentials.
+        '429':
+          description: Rate limit exceeded.
+
+  /api/v1/users/{id}:
+    delete:
+      summary: Hard Delete User Account
+      description: Permanently deletes user account and immediately cascade purges all tenant records from database. This action is irreversible.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User permanently purged.
+
+  /api/v1/mfa/challenge:
+    post:
+      summary: Request Multi-Factor Authentication Challenge
+      description: Sends SMS or TOTP challenge token to registered mobile device.
+      responses:
+        '200':
+          description: Challenge dispatched.

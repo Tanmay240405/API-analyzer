@@ -1,0 +1,768 @@
+{
+  "dataset_name": "API Behavioral Contracts & Deontic Modalities Corpus (APIstic Mined)",
+  "dataset_source": "APIstic: Large-Scale OpenAPI Evolution Dataset (ACM MSR 2024 / Zenodo 20525072)",
+  "dataset_doi": "10.5281/zenodo.20525072",
+  "description": "Comprehensive corpus of API behavioral rules, deontic contracts, and consumer breakage risk clauses mined from real-world OpenAPI commits for training Student 3's Behavioral Classifier.",
+  "version": "2.0.0",
+  "total_samples": 126,
+  "train_samples": [
+    {
+      "clause": "Mandatory: caller must provide warehouse id in request parameters.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "The client must include a valid Idempotency-Key header on all POST requests.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Every user account creation shall require two-factor authentication verification.",
+      "modality": "OBLIGATION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients must supply an authorization bearer token signed by an approved identity provider.",
+      "modality": "OBLIGATION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Caller must specify ISO-4217 three-letter currency code in transaction payload.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Request must contain valid signature generated with shared HMAC secret.",
+      "modality": "OBLIGATION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients are required to send Accept: application/json in HTTP headers.",
+      "modality": "OBLIGATION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "All requests must supply an X-Consumer-Username header.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "The application shall encrypt payload fields using AES-256 before transmission.",
+      "modality": "OBLIGATION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Mandatory requirement: client must explicitly confirm terms of service version.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Consumers must provide callback webhook URL for asynchronous notifications.",
+      "modality": "OBLIGATION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Caller must include client_id and client_secret in basic auth credentials.",
+      "modality": "OBLIGATION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "All batch requests must provide an explicit batch_size integer.",
+      "modality": "OBLIGATION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients must pass non-empty order item array on checkout.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Consumers are obligated to verify server SSL certificates.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients must not send more than 10 requests per second under penalty of HTTP 429.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Callers are strictly forbidden from reusing an expired session token.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Third-party applications must never query inactive inventory without explicit permission.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Do not execute concurrent write operations on the same resource ID.",
+      "modality": "PROHIBITION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Consumers must not store raw credit card numbers on local storage.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": false
+    },
+    {
+      "clause": "Payload size must not exceed 2 megabytes.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Callers are prohibited from invoking administration endpoints via public internet.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Do not pass cleartext passwords in URL query parameters.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients must not initiate more than 3 simultaneous file export jobs.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Users may not cancel subscriptions that have already entered the billing settlement phase.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Do not cache responses flagged with Cache-Control: no-store.",
+      "modality": "PROHIBITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Applications must never bypass certificate pin validations.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients must not send empty JSON objects in POST request body.",
+      "modality": "PROHIBITION",
+      "severity": "LOW",
+      "is_breaking": true
+    },
+    {
+      "clause": "Never submit payment requests with negative currency amounts.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Callers are forbidden from modifying system-managed audit timestamps.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Consumers may optionally include an expand parameter to retrieve nested entities.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Callers can provide an optional trace_id for distributed tracing telemetry.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Clients may request results in either JSON or XML format using the Accept header.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Developers are allowed to test endpoints against the sandbox environment freely.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "System may cache successful GET responses for up to 60 seconds.",
+      "modality": "PERMISSION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Callers may filter records using standard SQL wildcards.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Clients can omit the customer description field if unknown.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Consumers may compress request bodies using gzip transfer encoding.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Users are permitted to fetch up to 1000 items per request in bulk mode.",
+      "modality": "PERMISSION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Callers may provide an optional client reference identifier.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Clients can optionally request asynchronous webhook dispatching.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Developers may inspect deprecation timelines via OpenAPI headers.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Consumers may issue HEAD requests to inspect content length headers.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Clients can supply multiple email recipients separated by commas.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Users are allowed to override default pagination ordering.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Account balance must be greater than zero before submitting withdrawal.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Order status must be in PENDING_PAYMENT before invoking capture endpoint.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Cart must contain at least one physical item prior to calculating shipping options.",
+      "modality": "PRECONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "User must verify email address before accessing personal identifiable information.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Users must agree to terms of service before generating an API key.",
+      "modality": "PRECONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Resource must be in DRAFT state prior to triggering publication workflow.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Customer account must have verified billing method before subscribing.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Caller must acquire distributed lock on resource before initiating batch update.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Session must be initialized via OAuth authorization code grant first.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Previous transaction must have settled prior to issuing charge reversal.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Webhook target endpoint must respond with HTTP 200 to validation ping.",
+      "modality": "PRECONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "User must hold role ADMIN to execute tenant deletion operations.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Device must complete biometric authentication before token refresh.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Invoice must be unpaid prior to applying discount code.",
+      "modality": "PRECONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Cluster node must be cordoned before issuing drain command.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Guarantees database write is committed before HTTP 200 response is returned.",
+      "modality": "POSTCONDITION",
+      "severity": "HIGH",
+      "is_breaking": false
+    },
+    {
+      "clause": "Order creation guarantees immediate debit from the customer wallet balance.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Returns exact real-time snapshot with read-after-write consistency guaranteed.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Operation is strictly asynchronous; callers must poll task URL for completion status.",
+      "modality": "POSTCONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Guarantees resource is purged from all replica caches upon 204 No Content.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Successful payment execution generates audit record and dispatches email receipt.",
+      "modality": "POSTCONDITION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Response guarantees transaction rollback on any downstream microservice timeout.",
+      "modality": "POSTCONDITION",
+      "severity": "HIGH",
+      "is_breaking": false
+    },
+    {
+      "clause": "Endpoint returns HTTP 202 Accepted; consumer must poll job endpoint for artifacts.",
+      "modality": "POSTCONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Operation guarantees idempotency: replaying request yields identical receipt.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Server promises persistent retention of webhook event payload for 30 days.",
+      "modality": "POSTCONDITION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Job enqueued asynchronously; completion notification sent via registered webhook.",
+      "modality": "POSTCONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Ensures row lock is released immediately following response dispatch.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Returns newly created resource representation with populated ID and timestamps.",
+      "modality": "POSTCONDITION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Guarantees event publication to Kafka broker with at-least-once delivery.",
+      "modality": "POSTCONDITION",
+      "severity": "HIGH",
+      "is_breaking": false
+    },
+    {
+      "clause": "Operation will trigger background index recomputation across elasticsearch nodes.",
+      "modality": "POSTCONDITION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Maximum rate limit enforced: 100 requests per minute per IP address.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Rate limit restricted to 20 calls per minute for unauthenticated public clients.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "API quota capped at 10,000 monthly transactions per API key.",
+      "modality": "RATE_LIMIT",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Burst capacity limited to 5 concurrent connections per tenant.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Requests exceeding 50 calls per second are throttled with HTTP 429 response.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Search queries restricted to 5 calls per minute per user account.",
+      "modality": "RATE_LIMIT",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Hard quota enforced: 500 requests per day for developer tier accounts.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Bulk export endpoint rate limited to 2 executions per hour.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "File upload throughput limited to 10 MB per minute per API key.",
+      "modality": "RATE_LIMIT",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Callers exceeding rate quota will receive Retry-After header with wait duration.",
+      "modality": "RATE_LIMIT",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Concurrency limit capped at 10 simultaneous in-flight HTTP connections.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Global rate limit tightened to 60 calls per minute across all endpoints.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Token generation requests throttled to 3 attempts per 15 minutes.",
+      "modality": "RATE_LIMIT",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Traffic capped at 500 MB bandwidth consumption per billing cycle.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Hourly quota reduced from 5000 to 1000 requests per tenant.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    }
+  ],
+  "test_samples": [
+    {
+      "clause": "Mandatory: caller must pass tenant_id in request headers.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Caller must supply valid webhook HMAC signature.",
+      "modality": "OBLIGATION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients are required to provide billing email on account registration.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "All API requests shall include an Authorization Bearer JWT.",
+      "modality": "OBLIGATION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Caller must supply idempotency key on financial transfer requests.",
+      "modality": "OBLIGATION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Every batch update must provide non-empty record list.",
+      "modality": "OBLIGATION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients must not issue duplicate request tokens within 5 minutes.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Do not pass unencrypted passwords over non-TLS connections.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients are strictly prohibited from sharing API access keys.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Consumers must not query database replica during failover maintenance.",
+      "modality": "PROHIBITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Do not exceed maximum payload length of 1000 characters.",
+      "modality": "PROHIBITION",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Third-party callers are forbidden from invoking administrative endpoints.",
+      "modality": "PROHIBITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Callers can optionally request gzip compressed transfer encoding.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Callers may provide page and limit query parameters for pagination.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Clients are permitted to cache static metadata for 24 hours.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Users may optionally provide an external transaction identifier.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Consumers can request response bodies in protocol buffer format.",
+      "modality": "PERMISSION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Developers are allowed to test endpoints against staging server freely.",
+      "modality": "PERMISSION",
+      "severity": "NON_BREAKING",
+      "is_breaking": false
+    },
+    {
+      "clause": "Resource must be unlocked before issuing delete request.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "User profile must have verified phone number prior to money transfer.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Order must be marked as SHIPPED before submitting tracking number.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Consumers must not initiate withdrawal if account balance is negative.",
+      "modality": "PRECONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Clients can execute payments only after completing identity registration.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Client must acquire valid OAuth token before invoking user data endpoint.",
+      "modality": "PRECONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Response guarantees immediate SMS delivery before socket close.",
+      "modality": "POSTCONDITION",
+      "severity": "HIGH",
+      "is_breaking": false
+    },
+    {
+      "clause": "Endpoint returns HTTP 202 Accepted; caller must poll status endpoint until job terminates.",
+      "modality": "POSTCONDITION",
+      "severity": "CRITICAL",
+      "is_breaking": true
+    },
+    {
+      "clause": "Guarantees immediate database consistency upon 200 OK return.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Operation queues background image resize job; status returned asynchronously.",
+      "modality": "POSTCONDITION",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Operation promises persistent cloud storage sync within 5 seconds.",
+      "modality": "POSTCONDITION",
+      "severity": "LOW",
+      "is_breaking": false
+    },
+    {
+      "clause": "Guarantees resource record deletion across all backup clusters.",
+      "modality": "POSTCONDITION",
+      "severity": "MEDIUM",
+      "is_breaking": false
+    },
+    {
+      "clause": "Rate limit throttled to 5 requests per second.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Quota capped at 100 API calls per hour per user account.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Burst concurrency restricted to 3 simultaneous HTTP requests.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Throttling enforced: maximum 500 requests per minute.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    },
+    {
+      "clause": "Monthly usage quota reduced to 50,000 queries.",
+      "modality": "RATE_LIMIT",
+      "severity": "MEDIUM",
+      "is_breaking": true
+    },
+    {
+      "clause": "Server promises that rate limit will not exceed 100 requests per minute.",
+      "modality": "RATE_LIMIT",
+      "severity": "HIGH",
+      "is_breaking": true
+    }
+  ]
+}

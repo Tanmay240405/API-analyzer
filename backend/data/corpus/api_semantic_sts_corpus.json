@@ -1,0 +1,300 @@
+{
+  "dataset_name": "API Documentation Semantic Textual Similarity (STS) & Drift Corpus",
+  "dataset_source": "APIstic: Large-Scale OpenAPI Evolution Dataset (ACM MSR 2024 / Zenodo 20525072)",
+  "dataset_doi": "10.5281/zenodo.20525072",
+  "description": "Sentence pairs of API descriptions mined from APIstic commit histories annotated with cosine similarity [0.0 to 1.0], semantic drift, and meaning shift flags for fine-tuning Student 2's Bi-Encoder Sentence-Transformer.",
+  "version": "1.0.0",
+  "total_pairs": 36,
+  "train_pairs": [
+    {
+      "text1": "Returns all catalog products across all distribution centers without restriction.",
+      "text2": "Returns available products only. Inactive and discontinued items are excluded.",
+      "similarity": 0.47,
+      "drift": 0.53,
+      "meaning_shift": true,
+      "category": "SCOPE_NARROWING"
+    },
+    {
+      "text1": "Creates an order immediately and synchronously charges the user's card.",
+      "text2": "Queues the order for asynchronous batch processing. Card charged on fulfillment.",
+      "similarity": 0.52,
+      "drift": 0.48,
+      "meaning_shift": true,
+      "category": "EXECUTION_TIMING"
+    },
+    {
+      "text1": "Cancels an active subscription immediately. Pro-rated refund issued.",
+      "text2": "Schedules cancellation at the end of billing cycle. No refunds issued.",
+      "similarity": 0.45,
+      "drift": 0.55,
+      "meaning_shift": true,
+      "category": "BUSINESS_RULE_CONTRADICTION"
+    },
+    {
+      "text1": "Retrieve payment intent by identifier. Returns status and amount.",
+      "text2": "Fetch payment intent details using its unique ID. Includes status and total charge amount.",
+      "similarity": 0.94,
+      "drift": 0.06,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Fetches a paginated list of customers sorted by creation timestamp descending.",
+      "text2": "Retrieves customer records with pagination, ordered by created_at in descending sequence.",
+      "similarity": 0.95,
+      "drift": 0.05,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Generates an invoice PDF and streams raw binary bytes in the HTTP response.",
+      "text2": "Creates an invoice record and sends a signed S3 pre-signed download URL.",
+      "similarity": 0.58,
+      "drift": 0.42,
+      "meaning_shift": true,
+      "category": "PAYLOAD_FORMAT_CHANGE"
+    },
+    {
+      "text1": "Searches items matching keyword queries across title and description fields.",
+      "text2": "Searches items by keyword strictly within item titles. Descriptions are ignored.",
+      "similarity": 0.62,
+      "drift": 0.38,
+      "meaning_shift": true,
+      "category": "SEARCH_INDEX_NARROWING"
+    },
+    {
+      "text1": "Deletes the target user account permanently from database without recovery.",
+      "text2": "Flags the user account as soft-deleted and disables active logins.",
+      "similarity": 0.61,
+      "drift": 0.39,
+      "meaning_shift": true,
+      "category": "LIFECYCLE_BEHAVIOR"
+    },
+    {
+      "text1": "Updates product inventory counts. Mandatory: caller must provide warehouse id.",
+      "text2": "Updates product stock levels. Warehouse id is optional; defaults to primary DC.",
+      "similarity": 0.68,
+      "drift": 0.32,
+      "meaning_shift": true,
+      "category": "OBLIGATION_EASING"
+    },
+    {
+      "text1": "Upload user avatar image. Max size 5MB in JPEG or PNG format.",
+      "text2": "Upload profile picture. Supports JPEG, PNG and WebP up to 10MB.",
+      "similarity": 0.86,
+      "drift": 0.14,
+      "meaning_shift": false,
+      "category": "FEATURE_EXPANSION"
+    },
+    {
+      "text1": "Exports financial transactions as CSV format.",
+      "text2": "Downloads transaction logs in CSV spreadsheet representation.",
+      "similarity": 0.92,
+      "drift": 0.08,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Returns current exchange rates for all global fiat currency pairs.",
+      "text2": "Returns exchange rates for G10 currencies only. Minor currencies discontinued.",
+      "similarity": 0.51,
+      "drift": 0.49,
+      "meaning_shift": true,
+      "category": "SCOPE_NARROWING"
+    },
+    {
+      "text1": "Calculates shipping fee based on total weight and destination zip code.",
+      "text2": "Computes shipping cost using volumetric dimensional weight instead of gross weight.",
+      "similarity": 0.64,
+      "drift": 0.36,
+      "meaning_shift": true,
+      "category": "DOMAIN_CALCULATION_SHIFT"
+    },
+    {
+      "text1": "List warehouse locations for the authenticated merchant.",
+      "text2": "Lists fulfillment centers associated with the current merchant profile.",
+      "similarity": 0.93,
+      "drift": 0.07,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Validates promo code and returns discount percentage.",
+      "text2": "Checks voucher validity; now requires minimum basket total of $50.",
+      "similarity": 0.59,
+      "drift": 0.41,
+      "meaning_shift": true,
+      "category": "PRECONDITION_STRICTER"
+    },
+    {
+      "text1": "Resets user password via email verification link.",
+      "text2": "Initiates password reset flow by dispatching SMS OTP code.",
+      "similarity": 0.65,
+      "drift": 0.35,
+      "meaning_shift": true,
+      "category": "AUTH_PROTOCOL_MUTATION"
+    },
+    {
+      "text1": "Returns order history for the past 24 months.",
+      "text2": "Retrieves orders from the past 90 days only. Older data archived.",
+      "similarity": 0.56,
+      "drift": 0.44,
+      "meaning_shift": true,
+      "category": "RETENTION_LIMITATION"
+    },
+    {
+      "text1": "Submits credit card transaction for immediate 3D-Secure authorization.",
+      "text2": "Submits card payment for 3DS verification with automatic tokenization.",
+      "similarity": 0.88,
+      "drift": 0.12,
+      "meaning_shift": false,
+      "category": "FEATURE_EXPANSION"
+    },
+    {
+      "text1": "Health check probe endpoint. Returns HTTP 200 with service status UP.",
+      "text2": "Liveness probe returning 200 OK when operational.",
+      "similarity": 0.91,
+      "drift": 0.09,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Returns raw GPS telemetry pings every 5 seconds.",
+      "text2": "Returns smoothed trajectory waypoints aggregated at 60-second intervals.",
+      "similarity": 0.53,
+      "drift": 0.47,
+      "meaning_shift": true,
+      "category": "SAMPLING_FREQUENCY_SHIFT"
+    },
+    {
+      "text1": "Creates an API key valid for 1 year.",
+      "text2": "Generates an API key with mandatory 30-day rotation expiry.",
+      "similarity": 0.66,
+      "drift": 0.34,
+      "meaning_shift": true,
+      "category": "SECURITY_POLICY_TIGHTENING"
+    },
+    {
+      "text1": "Deletes all items in shopping cart.",
+      "text2": "Empties the current user's basket.",
+      "similarity": 0.95,
+      "drift": 0.05,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Fetches audit log entries. Rate limit: 100 requests per minute.",
+      "text2": "Retrieves audit trails. Rate limit restricted to 20 requests per minute.",
+      "similarity": 0.70,
+      "drift": 0.30,
+      "meaning_shift": true,
+      "category": "RATE_LIMIT_TIGHTENED"
+    },
+    {
+      "text1": "Creates user profile. Nickname is optional.",
+      "text2": "Creates user account. Nickname must be unique across all active profiles.",
+      "similarity": 0.63,
+      "drift": 0.37,
+      "meaning_shift": true,
+      "category": "VALIDATION_STRICTER"
+    },
+    {
+      "text1": "Provides tax calculation breakdown by municipality.",
+      "text2": "Calculates sales taxes grouped by local city jurisdictions.",
+      "similarity": 0.92,
+      "drift": 0.08,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Returns weather forecasts in Celsius.",
+      "text2": "Returns meteorological forecasts strictly in Kelvin units.",
+      "similarity": 0.57,
+      "drift": 0.43,
+      "meaning_shift": true,
+      "category": "UNIT_SYSTEM_BREAK"
+    }
+  ],
+  "test_pairs": [
+    {
+      "text1": "Downloads all stock keeping units regardless of availability.",
+      "text2": "Lists in-stock items only. Discontinued SKUs omitted.",
+      "similarity": 0.46,
+      "drift": 0.54,
+      "meaning_shift": true,
+      "category": "SCOPE_NARROWING"
+    },
+    {
+      "text1": "Synchronously commits ledger transaction and returns balance.",
+      "text2": "Submits ledger entry to background queue. Balance returns pending status.",
+      "similarity": 0.50,
+      "drift": 0.50,
+      "meaning_shift": true,
+      "category": "EXECUTION_TIMING"
+    },
+    {
+      "text1": "Get merchant settlement details by ID.",
+      "text2": "Fetch payout settlement record for specified identifier.",
+      "similarity": 0.93,
+      "drift": 0.07,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Sends notifications via email and SMS simultaneously.",
+      "text2": "Sends email alert only. SMS service has been retired.",
+      "similarity": 0.60,
+      "drift": 0.40,
+      "meaning_shift": true,
+      "category": "FEATURE_DEPRECATION"
+    },
+    {
+      "text1": "Queries products by category name.",
+      "text2": "Finds items matching given category classification.",
+      "similarity": 0.94,
+      "drift": 0.06,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Allows anonymous unauthenticated guest checkout.",
+      "text2": "Requires authenticated bearer token with verified email to checkout.",
+      "similarity": 0.42,
+      "drift": 0.58,
+      "meaning_shift": true,
+      "category": "AUTHENTICATION_GATE"
+    },
+    {
+      "text1": "Calculates net profit using standard FIFO accounting.",
+      "text2": "Computes net profit applying LIFO inventory costing method.",
+      "similarity": 0.67,
+      "drift": 0.33,
+      "meaning_shift": true,
+      "category": "DOMAIN_CALCULATION_SHIFT"
+    },
+    {
+      "text1": "Exports customer list in JSON format.",
+      "text2": "Returns customer records in JSON payload.",
+      "similarity": 0.96,
+      "drift": 0.04,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    },
+    {
+      "text1": "Executes batch refund across multiple charges.",
+      "text2": "Processes single charge refund only. Batch refunds no longer supported.",
+      "similarity": 0.55,
+      "drift": 0.45,
+      "meaning_shift": true,
+      "category": "FEATURE_DEPRECATION"
+    },
+    {
+      "text1": "Ping test returning pong response.",
+      "text2": "Echo test returning pong message for latency checks.",
+      "similarity": 0.91,
+      "drift": 0.09,
+      "meaning_shift": false,
+      "category": "PARAPHRASE_EQUIVALENT"
+    }
+  ]
+}
