@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Menu, Sun, Moon, AlertCircle } from 'lucide-react';
 import { checkHealth } from '../services/api';
 import { useTheme } from '../context/ThemeContext';
@@ -67,57 +67,6 @@ export const TopNav: React.FC<TopNavProps> = ({ onToggleSidebar }) => {
       </div>
 
       <div className="flex items-center space-x-2 sm:space-x-3">
-        {/* Chatbot 1 CLI Theme Button */}
-        <NavLink
-          to="/chatbot-cli"
-          className={({ isActive }) =>
-            `flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              isActive
-                ? 'bg-[#00ff9d] text-black shadow-md shadow-[#00ff9d]/30 font-mono'
-                : 'bg-slate-900 text-[#00ff9d] border border-[#00ff9d]/40 hover:bg-[#00ff9d]/10 font-mono'
-            }`
-          }
-          title="Open Chatbot Concept 1 (CLI Theme)"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00ff9d]" />
-          <span className="font-extrabold tracking-wide hidden xs:inline">&gt;_ CLI Bot</span>
-          <span className="font-extrabold tracking-wide xs:hidden">CLI</span>
-        </NavLink>
-
-        {/* Chatbot 2 Rimma Bento Button */}
-        <NavLink
-          to="/chatbot-2"
-          className={({ isActive }) =>
-            `flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              isActive
-                ? 'bg-[#d5f338] text-black shadow-md shadow-[#d5f338]/30'
-                : 'bg-black text-[#d5f338] border border-[#d5f338]/40 hover:bg-[#d5f338]/10'
-            }`
-          }
-          title="Open Chatbot Concept 2 (Rimma Minimalist Bento)"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#d5f338] animate-pulse" />
-          <span className="font-extrabold tracking-wide hidden xs:inline">⚡ Bento Bot</span>
-          <span className="font-extrabold tracking-wide xs:hidden">Bento</span>
-        </NavLink>
-
-        {/* Chatbot 3 Atelier Folio Button */}
-        <NavLink
-          to="/chatbot-3"
-          className={({ isActive }) =>
-            `flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              isActive
-                ? 'bg-[#b8431e] text-white shadow-md shadow-[#b8431e]/30'
-                : 'bg-[#fbf9f4] text-[#b8431e] border border-[#b8431e]/40 hover:bg-[#b8431e]/10 dark:bg-stone-900 dark:text-[#e0714f]'
-            }`
-          }
-          title="Open Chatbot Concept 3 (Atelier Folio Gazette)"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#b8431e]" />
-          <span className="font-extrabold tracking-wide hidden xs:inline">✒ Folio Bot</span>
-          <span className="font-extrabold tracking-wide xs:hidden">Folio</span>
-        </NavLink>
-
         {/* Backend & NLP Status Badge */}
         <div
           className={`flex items-center space-x-2 px-3 py-1.5 rounded-full text-xs border ${
