@@ -7,8 +7,7 @@ import {
   PlusCircle,
   Clock,
   ArrowRight,
-  AlertTriangle,
-  Terminal
+  AlertTriangle
 } from 'lucide-react';
 import {
   ResponsiveContainer,
@@ -52,16 +51,7 @@ export const OverviewPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-shrink-0">
-          <Link
-            to="/chatbot-cli"
-            className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-slate-900 dark:bg-black text-[#00ff9d] border border-[#00ff9d]/40 font-mono font-bold text-xs sm:text-sm shadow-md hover:bg-[#00ff9d]/10 transition-all hover:scale-[1.02]"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#00ff9d] animate-ping" />
-            <Terminal className="w-4 h-4 text-[#00ff9d]" />
-            <span>Chatbot 1: Cyber-CLI</span>
-          </Link>
-
+        <div className="flex items-center gap-3 flex-shrink-0">
           <Link
             to="/new-analysis"
             className="inline-flex items-center justify-center space-x-2.5 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-[1.02]"
@@ -70,32 +60,6 @@ export const OverviewPage: React.FC = () => {
             <span>Analyze API Versions</span>
           </Link>
         </div>
-      </div>
-
-      {/* CHATBOT 1 CYBER-CLI SHOWCASE BANNER */}
-      <div className="rounded-2xl bg-[#05080c] border border-[#00ff9d]/30 p-5 sm:p-6 text-[#00ff9d] font-mono shadow-xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div className="space-y-2 z-10">
-          <div className="flex items-center space-x-2">
-            <span className="px-2 py-0.5 rounded bg-[#00ff9d] text-black font-extrabold text-[10px] tracking-wider">
-              TEACHER DEMO // CONCEPT 1 OF 3
-            </span>
-            <span className="text-[#00f0ff] text-xs font-bold">CYBER-SHELL v3.0-AST-COGNITION</span>
-          </div>
-          <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-            Terminal CLI Chatbot Interface
-          </h3>
-          <p className="text-xs text-slate-300 max-w-2xl leading-relaxed font-sans">
-            Upload two OpenAPI specifications side-by-side into top mounted virtual filesystem boxes (<code className="text-[#00ff9d] font-mono">/mnt/v1</code> & <code className="text-red-400 font-mono">/mnt/v2</code>) and converse via a cyber terminal with AST telemetry, semantic drift vectors, and live CLI macros.
-          </p>
-        </div>
-
-        <Link
-          to="/chatbot-cli"
-          className="z-10 inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-[#00ff9d] text-black font-extrabold text-xs tracking-wider shadow-lg shadow-[#00ff9d]/20 hover:bg-[#00ff9d]/90 transition-all flex-shrink-0"
-        >
-          <span>LAUNCH CLI CHATBOT</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
       </div>
 
       {/* Metrics Row */}
