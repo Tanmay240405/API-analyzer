@@ -15,6 +15,7 @@ import { BenchmarkView } from './components/BenchmarkView';
 import { DocumentationPage } from './pages/DocumentationPage';
 import { CliChatbotPage } from './pages/CliChatbotPage';
 import { OrbitalChatbotPage } from './pages/OrbitalChatbotPage';
+import { FolioChatbotPage } from './pages/FolioChatbotPage';
 import { Sparkles, Terminal, Layers, ShieldCheck } from 'lucide-react';
 
 import { useLocation } from 'react-router-dom';
@@ -26,13 +27,16 @@ export const AppContent: React.FC = () => {
 
   if (isChatbotRoute) {
     return (
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen">
         <Toaster position="top-right" />
         <Routes>
           <Route path="/chatbot-cli" element={<CliChatbotPage />} />
           <Route path="/chatbot-1" element={<CliChatbotPage />} />
           <Route path="/chatbot-2" element={<OrbitalChatbotPage />} />
           <Route path="/chatbot-orbital" element={<OrbitalChatbotPage />} />
+          <Route path="/chatbot-3" element={<FolioChatbotPage />} />
+          <Route path="/chatbot-atelier" element={<FolioChatbotPage />} />
+          <Route path="/chatbot-folio" element={<FolioChatbotPage />} />
         </Routes>
       </div>
     );

@@ -11,8 +11,7 @@ import {
   BookOpen,
   GitCompare,
   X,
-  Terminal,
-  Code2
+  Terminal
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -179,18 +178,30 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 </span>
               </NavLink>
 
+              {/* CONCEPT 3: ATELIER FOLIO GAZETTE */}
               <NavLink
-                to="/chatbot-cli"
+                to="/chatbot-3"
                 onClick={onClose}
-                className={`flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all opacity-70 hover:opacity-100 ${
-                  isTerminalStyle ? 'text-slate-400 hover:text-slate-200 hover:bg-slate-900' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center justify-between p-2.5 rounded-lg text-xs font-semibold transition-all border ${
+                    isActive
+                      ? 'bg-[#b8431e] border-[#b8431e] text-white shadow-md'
+                      : 'bg-[#fbf9f4]/80 dark:bg-stone-900/60 border-[#ded6c9] dark:border-stone-800 text-[#5c564e] dark:text-stone-300 hover:bg-[#f4efe5] dark:hover:bg-stone-800 hover:text-[#b8431e]'
+                  }`
+                }
               >
-                <div className="flex items-center space-x-2">
-                  <Code2 className="w-3.5 h-3.5" />
-                  <span>Concept 3: Dual Copilot</span>
+                <div className="flex items-center space-x-2.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#b8431e]" />
+                  <div>
+                    <span className="block leading-tight">Chatbot 3: Folio Gazette</span>
+                    <span className="text-[10px] block opacity-80 font-normal">
+                      Editorial Literary UI
+                    </span>
+                  </div>
                 </div>
-                <span className="text-[9px] text-slate-500">Preview</span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono font-bold bg-[#b8431e] text-white shadow-xs">
+                  READY
+                </span>
               </NavLink>
             </div>
           </div>

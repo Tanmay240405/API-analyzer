@@ -41,3 +41,23 @@
     background: rgba(100, 116, 139, 0.7);
   }
 }
+
+.font-serif-editorial {
+  font-family: 'Newsreader', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-mono-editorial {
+  font-family: 'Space Mono', 'Courier New', monospace;
+}
+
+.drop-cap-editorial::first-letter {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  float: left;
+  font-size: 3.4rem;
+  line-height: 0.82;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  font-weight: 600;
+  color: #b8431e;
+}

@@ -580,11 +580,11 @@ type 'diff', 'breaking', or 'semantic' for deep inspection.`
               <span className="text-[10px] bg-[#d5f338] text-black font-bold px-1 rounded">open ↗</span>
             </button>
             <button
-              onClick={() => setConceptModal(3)}
-              className="w-full text-left px-2.5 py-1.5 rounded text-xs text-zinc-500 hover:text-zinc-300 transition-colors flex items-center justify-between"
+              onClick={() => navigate('/chatbot-3')}
+              className="w-full text-left px-2.5 py-1.5 rounded text-xs text-[#b8431e] hover:bg-[#b8431e]/10 border border-[#b8431e]/30 transition-colors flex items-center justify-between group"
             >
-              <span>3. ide split copilot</span>
-              <span className="text-[10px] text-zinc-600">preview</span>
+              <span className="group-hover:text-white">3. folio gazette</span>
+              <span className="text-[10px] bg-[#b8431e] text-white font-bold px-1 rounded">open ↗</span>
             </button>
           </div>
 

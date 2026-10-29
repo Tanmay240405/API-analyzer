@@ -319,6 +319,14 @@ export const OrbitalChatbotPage: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-[#d5f338]" />
             <span>Concept 2: Rimma Bento</span>
           </div>
+          <button
+            onClick={() => navigate('/chatbot-3')}
+            className="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/70 hover:bg-white text-xs font-semibold text-zinc-800 transition-all shadow-sm"
+            title="Switch to Concept 3: Atelier Folio Gazette"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#b8431e]" />
+            <span>✒ Concept 3: Folio</span>
+          </button>
         </div>
 
         {/* Center Subtitle branding */}

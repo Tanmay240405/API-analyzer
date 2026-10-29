@@ -32,6 +32,13 @@ export const TopNav: React.FC<TopNavProps> = ({ onToggleSidebar }) => {
       case '/chatbot-cli':
       case '/chatbot-1':
         return 'Chatbot Concept 1: Cyber-CLI Terminal';
+      case '/chatbot-2':
+      case '/chatbot-orbital':
+        return 'Chatbot Concept 2: Rimma Minimalist Bento';
+      case '/chatbot-3':
+      case '/chatbot-atelier':
+      case '/chatbot-folio':
+        return 'Chatbot Concept 3: Atelier Folio Gazette';
       default:
         if (pathname.startsWith('/analysis/')) return 'Analysis Report Details';
         return 'API Behavioral Impact Analysis';
@@ -92,6 +99,23 @@ export const TopNav: React.FC<TopNavProps> = ({ onToggleSidebar }) => {
           <span className="w-1.5 h-1.5 rounded-full bg-[#d5f338] animate-pulse" />
           <span className="font-extrabold tracking-wide hidden xs:inline">⚡ Bento Bot</span>
           <span className="font-extrabold tracking-wide xs:hidden">Bento</span>
+        </NavLink>
+
+        {/* Chatbot 3 Atelier Folio Button */}
+        <NavLink
+          to="/chatbot-3"
+          className={({ isActive }) =>
+            `flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              isActive
+                ? 'bg-[#b8431e] text-white shadow-md shadow-[#b8431e]/30'
+                : 'bg-[#fbf9f4] text-[#b8431e] border border-[#b8431e]/40 hover:bg-[#b8431e]/10 dark:bg-stone-900 dark:text-[#e0714f]'
+            }`
+          }
+          title="Open Chatbot Concept 3 (Atelier Folio Gazette)"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#b8431e]" />
+          <span className="font-extrabold tracking-wide hidden xs:inline">✒ Folio Bot</span>
+          <span className="font-extrabold tracking-wide xs:hidden">Folio</span>
         </NavLink>
 
         {/* Backend & NLP Status Badge */}
