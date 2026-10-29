@@ -13,10 +13,30 @@ import { BehavioralImpactPage } from './pages/BehavioralImpactPage';
 import { HistoryView } from './components/HistoryView';
 import { BenchmarkView } from './components/BenchmarkView';
 import { DocumentationPage } from './pages/DocumentationPage';
+import { CliChatbotPage } from './pages/CliChatbotPage';
+import { OrbitalChatbotPage } from './pages/OrbitalChatbotPage';
 import { Sparkles, Terminal, Layers, ShieldCheck } from 'lucide-react';
+
+import { useLocation } from 'react-router-dom';
 
 export const AppContent: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
+  const isChatbotRoute = location.pathname.startsWith('/chatbot');
+
+  if (isChatbotRoute) {
+    return (
+      <div className="min-h-screen bg-black text-white">
+        <Toaster position="top-right" />
+        <Routes>
+          <Route path="/chatbot-cli" element={<CliChatbotPage />} />
+          <Route path="/chatbot-1" element={<CliChatbotPage />} />
+          <Route path="/chatbot-2" element={<OrbitalChatbotPage />} />
+          <Route path="/chatbot-orbital" element={<OrbitalChatbotPage />} />
+        </Routes>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200">
@@ -44,6 +64,8 @@ export const AppContent: React.FC = () => {
             <Route path="/history" element={<HistoryView />} />
             <Route path="/evaluation" element={<BenchmarkView />} />
             <Route path="/documentation" element={<DocumentationPage />} />
+            <Route path="/chatbot-cli" element={<CliChatbotPage />} />
+            <Route path="/chatbot-1" element={<CliChatbotPage />} />
           </Routes>
         </main>
 
